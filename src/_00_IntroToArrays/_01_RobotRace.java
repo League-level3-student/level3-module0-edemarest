@@ -8,9 +8,35 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
 	//1. make a main method
-	
+	public static void main(String[] args) {
+		Robot[] robs = new Robot[5];
+		
+		for(int i = 0; i < robs.length; i++) {
+			robs[i]=new Robot();
+			robs[i].moveTo(50+(200*i), 550);
+			robs[i].setSpeed(20);
+		}
+		
+		
+		while(robs[0].getY() >= 0 && robs[1].getY() >= 0 && robs[2].getY() >= 0 && robs[3].getY() >= 0 && robs[4].getY() >= 0) {
+		for(int i = 0; i < robs.length; i++) {
+			int random = new Random().nextInt(50);
+			robs[i].move(random);
+		}
+		}
+		
+		int winner = 0;
+		
+		for(int i = 0; i < robs.length; i++) {
+			if(robs[i].getY() <= 0) {
+				winner = i;
+			}
+		}
+		
+		JOptionPane.showMessageDialog(null, "Congratulations! Robot #"+winner+" wins the race!");
+		
 		//2. create an array of 5 robots.
-
+		
 		//3. use a for loop to initialize the robots.
 
 			//4. make each robot start at the bottom of the screen, side by side, facing up
@@ -26,5 +52,5 @@ public class _01_RobotRace {
     	
 	    //9. make the robots race around a circular track.
 
-	
+	}
 }
