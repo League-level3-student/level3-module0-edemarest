@@ -21,11 +21,11 @@ public class _00_1D_Array_Methods {
 	//   of the integers in the array being passed in
 	
 	public static double averageIntArray(int[] values) {
-		int sum2 = 0;
+		double sum2 = 0;
 		for(int i = 0; i < values.length; i++) {
 			sum2 = sum2 + values[i];
 		}
-		int average = 0;
+		double average = 0;
 		average = sum2/values.length;
 		System.out.println(average);
 		return average;
@@ -49,15 +49,15 @@ public class _00_1D_Array_Methods {
 	//   first instance that the specified value occurs in the array.
 	//   If the array does not contain the specified value, it should return -1.
 	public static int getIndex(int[] a, int value) {
-		int loc = -1;
+		
 		for(int i = 0; i < a.length; i++) {
-			int instance = 0;
-			if(a[i]==value && instance == 0) {
-				loc = i;
+			
+			if(a[i]==value) {
+				return i;
 			}
 			
 		}
-		return loc;
+			return -1;
 		
 	}
 }
